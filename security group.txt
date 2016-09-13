@@ -1,0 +1,17 @@
+SECURITY GROUPS:
+Security groups act as a firewall for associated instances, controlling both inbound and outbound traffic at the instance level.
+We must add rules to a security group that enable you to connect to your instance from your IP address using SSH.
+We can also add rules that allow inbound and outbound HTTP and HTTPS access from anywhere.
+
+
+STEPS TO  SET SECURITY GROUP FOR AN INSTANCE:
+1.Open the Amazon EC2 console
+2.From the navigation bar, select a region for the security group. Security groups are specific to a region, so we should select the same region in which we created our key pair.
+3.Click Security Groups in the navigation pane.
+4.Click Create Security Group.
+5.Enter a name for the new security group and a description.
+6.From the VPC list, select our VPC. If we have a default VPC, it's the one that is marked with an asterisk (*)
+7.On the Inbound tab, create the following rules  and then click Create
+8.Select HTTP from the Type list, and make sure that Source is set to Anywhere (0.0.0.0/0).
+9.Select HTTPS from the Type list, and make sure that Source is set to Anywhere (0.0.0.0/0).
+10.Select SSH from the Type list. In the Source box, ensure Custom is selected, and specify the public IP address of our computer or network in CIDR notation.
